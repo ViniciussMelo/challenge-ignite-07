@@ -6,7 +6,6 @@ import { GetStatementOperationUseCase } from "./GetStatementOperationUseCase";
 import { InMemoryUsersRepository } from "../../../users/repositories/in-memory/InMemoryUsersRepository";
 import { InMemoryStatementsRepository } from "../../repositories/in-memory/InMemoryStatementsRepository";
 import { GetStatementOperationError } from "./GetStatementOperationError";
-import { CreateStatementError } from "../createStatement/CreateStatementError";
 
 let createUserUseCase: CreateUserUseCase;
 let createStatementUseCase: CreateStatementUseCase;
@@ -79,7 +78,7 @@ describe("Get Statement Operation Use Case", () => {
         user_id: `wrong id`,
         statement_id,
       });
-    }).rejects.toBeInstanceOf(CreateStatementError.UserNotFound);
+    }).rejects.toBeInstanceOf(GetStatementOperationError.UserNotFound);
   });
 
   it("should no be able to get one statement operation if it operation does not exists", async () => {
