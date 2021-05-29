@@ -60,8 +60,8 @@ describe("Get Balance Use Case", () => {
     expect(balance).toBe(amountDeposit);
   });
 
-  it("should no be able to get balance if it user does not exists", () => {
-    expect(async () => {
+  it("should no be able to get balance if it user does not exists", async () => {
+    await expect(async () => {
       await getBalanceUseCase.execute({ user_id: "incorrect user" });
     }).rejects.toBeInstanceOf(GetBalanceError);
   });

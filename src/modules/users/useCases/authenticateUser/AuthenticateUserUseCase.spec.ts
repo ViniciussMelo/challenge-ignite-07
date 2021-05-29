@@ -49,7 +49,7 @@ describe("Authenticate user", () => {
   });
 
   it("should not be able to to init a new session with incorrect password", async () => {
-    expect(async () => {
+    await expect(async () => {
       await createUserUseCase.execute(newUser);
 
       await authenticateUserUseCase.execute({
@@ -60,7 +60,7 @@ describe("Authenticate user", () => {
   });
 
   it("should not be able to to init a new session with incorrect email", async () => {
-    expect(async () => {
+    await expect(async () => {
       await createUserUseCase.execute(newUser);
 
       await authenticateUserUseCase.execute({

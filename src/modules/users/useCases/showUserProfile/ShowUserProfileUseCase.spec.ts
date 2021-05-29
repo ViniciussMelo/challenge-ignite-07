@@ -33,7 +33,7 @@ describe("Show User Profile Use Case", () => {
 
   it("should be able to get user information with invalid id", async () => {
     await expect(async () => {
-      await showUserProfileUseCase.execute("")
+      await showUserProfileUseCase.execute("");
     }).rejects.toBeInstanceOf(AppError);
   });
 });

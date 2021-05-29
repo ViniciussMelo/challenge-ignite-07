@@ -28,7 +28,7 @@ describe("Create user", () => {
   });
 
   it("should not be able to create a new user if the user already exists", async () => {
-    expect(async () => {
+    await expect(async () => {
       await createUserUseCase.execute(newUser);
       await createUserUseCase.execute(newUser);
     }).rejects.toBeInstanceOf(AppError);

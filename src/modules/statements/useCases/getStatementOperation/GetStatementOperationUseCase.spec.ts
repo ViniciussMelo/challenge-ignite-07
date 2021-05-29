@@ -65,7 +65,7 @@ describe("Get Statement Operation Use Case", () => {
   });
 
   it("should no be able to get one statement operation if it user does not exists", async () => {
-    expect(async () => {
+    await expect(async () => {
       const user = await createUserUseCase.execute(newUser)
       const user_id = user.id || "";
 
@@ -83,7 +83,7 @@ describe("Get Statement Operation Use Case", () => {
   });
 
   it("should no be able to get one statement operation if it operation does not exists", async () => {
-    expect(async () => {
+    await expect(async () => {
       const user = await createUserUseCase.execute(newUser)
       const user_id = user.id || "";
 
